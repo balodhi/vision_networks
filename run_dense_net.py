@@ -24,7 +24,7 @@ train_params_svhn = {
     'validation_set': True,
     'validation_split': None,  # you may set it 6000 as in the paper
     'shuffle': True,  # shuffle dataset every epoch or not
-    'normalization': 'divide_255',
+    'normalization': 'mean_0',
 }
 
 
