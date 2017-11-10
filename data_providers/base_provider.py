@@ -58,6 +58,10 @@ class ImagesDataSet(DataSet):
             images = images / 255
         elif normalization_type == 'divide_256':
             images = images / 256
+        elif normalization_type == 'mean_0':
+            train_n = np.full((images.shape[0],images.shape[1],images.shape[2],images.shape[3]),255.0,dtype = np.float32)
+            pixel_depth = 255.0
+            images = ((images-train_n)/2)/pixel_depth;
         elif normalization_type == 'by_chanels':
             images = images.astype('float64')
             # for every channel in image(assume this is last dimension)
